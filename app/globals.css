@@ -1,26 +1,38 @@
+@import url(https://fonts.cdnfonts.com/css/minecraft-3);
+@import url(https://fonts.cdnfonts.com/css/rogan);
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@-webkit-keyframes pop {
+  from {
+    -webkit-transform: scale(0.95);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.95);
   }
 }
 
+html {
+  /* scrollbar-gutter: stable; Reserve space */
+  overflow-y: scroll; /* Show only when needed */
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: "Epilogue", sans-serif;
+  overflow-y: overlay;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "04b";
 }
