@@ -31,8 +31,34 @@ body {
   overflow-y: overlay;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "04b";
+@font-face {
+  font-family: "weiss-rundgotisch";
+  src: url("/fonts/weiss-rundgotisch.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "karmilla-regular";
+  src: url("/fonts/karmilla-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "karmilla-bold";
+  src: url("/fonts/karmilla-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "stretch-pro";
+  src: url("/fonts/stretch-pro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3 {
+  font-family: "stretch-pro";
 }
