@@ -22,15 +22,18 @@ mat3 rotateX(float a) {
   return mat3(1,0,0, 0,cos(a),-sin(a), 0,sin(a),cos(a));
 }
 
+float hash(vec2 p) {
+  return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+
 // Blue steel palette: map a 0..1 value to deep navy -> cold steel -> icy white
-vec4 blueSteel(float t) {
-  // three control points: deep navy, steel blue, icy highlight
-  vec3 dark  = vec3(0.01, 0.04, 0.10);  // near-black navy
-  vec3 steel = vec3(0.18, 0.35, 0.55);  // cold steel blue
-  vec3 ice   = vec3(0.72, 0.88, 1.00);  // icy highlight
+vec4 yellowWarm(float t) {
+  vec3 dark  = vec3(0.08, 0.07, 0.04);  // deep dark olive-black
+  vec3 mid   = vec3(0.50, 0.48, 0.35);  // muted yellow-brown
+  vec3 light = vec3(0.87, 0.87, 0.80);  // #DDDDCC icy yellow-grey
   vec3 col = t < 0.5
-    ? mix(dark,  steel, t * 2.0)
-    : mix(steel, ice,  (t - 0.5) * 2.0);
+    ? mix(dark, mid,   t * 2.0)
+    : mix(mid,  light, (t - 0.5) * 2.0);
   return vec4(col, 1.0);
 }
 
@@ -52,13 +55,17 @@ void main() {
     // brightness of this ray march step
     float brightness = 1.0 / (40.0 * exp(d * i * 3.0));
     // use i to drive a subtle hue shimmer within the blue-steel range
-    float t = clamp(0.15 + 0.5 * cos(i * 0.18 + 1.2) + 0.35, 0.0, 1.0);
-    fragColor += blueSteel(t) * brightness;
+    float t = clamp(0.15 + 0.5 * cos(i * 0.18 + 0.0) + 0.35, 0.0, 1.0);
+    fragColor += yellowWarm(t) * brightness;
   }
   // Crush darks, boost contrast for that dark steel feel
   fragColor.rgb = pow(fragColor.rgb, vec3(0.85));
   fragColor.rgb *= 0.9;
   fragColor.a = 1.0;
+  
+  // Subtle noise overlay
+  float noise = hash(gl_FragCoord.xy) * 0.10 - 0.03;
+  fragColor.rgb += noise;
 }
 `;
 
@@ -67,7 +74,7 @@ export default function ShaderCanvas() {
   const glRef = useRef(null);
   const programRef = useRef(null);
   const rafRef = useRef(null);
-  const cameraRef = useRef({ yaw: 0, pitch: 0 });
+  const cameraRef = useRef({ yaw: 145 * Math.PI / 180, pitch: 0 });
   const dragRef = useRef({ active: false, lastX: 0, lastY: 0 });
 
   useEffect(() => {
@@ -170,17 +177,24 @@ export default function ShaderCanvas() {
   }, []);
 
   return (
-    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-      <canvas
-        ref={canvasRef}
-        style={{
-          display: 'block',
-          width: '100%',
-          height: '100%',
-          cursor: 'grab',
-          touchAction: 'none',
-        }}
-      />
-    </div>
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        <canvas
+            ref={canvasRef}
+            style={{
+              display: 'block',
+              width: '100%',
+              height: '100%',
+              cursor: 'grab',
+              touchAction: 'none',
+            }}
+        />
+        {/* Darkening overlay */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'rgba(0, 0, 0, 0.55)',
+          pointerEvents: 'none',  // so dragging the shader still works trough stuff
+        }} />
+      </div>
   );
 }
