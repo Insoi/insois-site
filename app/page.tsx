@@ -8,6 +8,6 @@ export const metadata: Metadata = {
       "and whatever else I keep starting but never finishing.",
 };
 
-export default function Home() {
+export default function Frontpage() {
   return <FrontpageClient />;
 }

@@ -7,7 +7,7 @@ import Image from "next/image";
 
 {/* gets used on the main front page from client stored on server components */}
 
-export default function HomeClient() {
+export default function frontpageClient() {
     return (
         <div style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
             <ShaderCanvas />
@@ -19,6 +19,7 @@ export default function HomeClient() {
                 alignItems: "flex-end",
                 justifyContent: "center",
                 minHeight: '100vh',
+                pointerEvents: 'none',
             }}>
                 <div style={{
                     width: "100%",
@@ -26,19 +27,19 @@ export default function HomeClient() {
                     background: "rgba(20, 20, 20, 0.72)",
                     border: "1px dashed rgba(255,255,255,0.25)",
                     padding: "0rem 2.5rem 0.5rem 2.5rem",
-                    backdropFilter: "blur(4px)",
+                    backdropFilter: "blur(5px)",
                 }}>
                     <div style={{ display: 'flex', alignItems: 'flex-end', margin: '-1rem 0rem 0.5rem -3.5rem' }}>
                         <Image src="/images/icon.png" alt="Insoi logo" width={175} height={175} />
                         <h1 style={{ fontFamily: 'weiss-rundgotisch', fontSize: '6rem', margin: "0 0 -20px 0", color: "#DDDDCC"}}>Insoi</h1>
                     </div>
 
-                    <p style={{ marginBottom: '1.5rem', fontSize: '0.9rem' , color: "#DDDDCC" }}>
-                        <b>I am a developer, drummer, and so-called artist.</b>{" "}
+                    <p style={{ margin: '0rem 15rem 1.3rem 0rem', lineHeight: 1, fontSize: '1.2rem', color: "#888877", fontFamily: "karmilla-regular" }}>
+                        <b style={{ color: "#DDDDCC", fontFamily: "karmilla-bold" }}>I am a developer, drummer, and so-called artist.</b>{" "}
                         Sharing my projects, games and whatever else I keep starting but never finishing.
                     </p>
 
-                    <hr style={{ borderColor: 'rgba(255,255,255,0.2)', marginBottom: '1.5rem' }} />
+                    <hr style={{ borderColor: 'rgba(255,255,255,0.2)', marginBottom: '1rem' }} />
 
                     {/* Two columns */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
@@ -46,13 +47,13 @@ export default function HomeClient() {
                         {/* Left: Pages */}
                         <div>
                             <h1 style={{ fontFamily: 'stretch-pro', fontSize: '1.5rem', color: "#DDDDCC", marginBottom: "0.25rem"}}>Pages</h1>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.2rem 1rem', marginBottom: '1.5rem' }}>
-                                <Link href="/about" style={{ textDecoration: 'underline', color: "#DDDDCC" }}>About me</Link>
-                                <Link href="/art" style={{ textDecoration: 'underline', color: "#DDDDCC" }}>Art Gallery</Link>
-                                <Link href="/other-projects" style={{ textDecoration: 'underline', color: "#DDDDCC" }}>Projects</Link>
-                                <Link href="https://discord.gg/yourlink" style={{ textDecoration: 'underline', color: "#DDDDCC" }}>Discord</Link>
-                                <Link href="/games" style={{ textDecoration: 'underline', color: "#DDDDCC" }}>Games</Link>
-                                <Link href="https://github.com/insoi" style={{ textDecoration: 'underline', color: "#DDDDCC" }}>Github</Link>
+                            <div style={{ display: 'grid', gridTemplateColumns: '0fr 1fr', gap: '0.2rem 0.5rem', marginBottom: '1rem' }}>
+                                <Link href="/" style={{ textDecoration: 'underline', color: "#DDDDCC", fontFamily: "karmilla-regular" }}>About me</Link>
+                                <Link href="/art" style={{ textDecoration: 'underline', color: "#DDDDCC", fontFamily: "karmilla-regular" }}>Art Gallery</Link>
+                                <Link href="/other-projects" style={{ textDecoration: 'underline', color: "#DDDDCC", fontFamily: "karmilla-regular" }}>Projects</Link>
+                                <Link href="https://discord.gg/sqDhRrgqve" style={{ textDecoration: 'underline', color: "#DDDDCC", fontFamily: "karmilla-regular" }}>Discord</Link>
+                                <Link href="/games" style={{ textDecoration: 'underline', color: "#DDDDCC", fontFamily: "karmilla-regular"  }}>Games</Link>
+                                <Link href="https://github.com/insoi" style={{ textDecoration: 'underline', color: "#DDDDCC", fontFamily: "karmilla-regular"  }}>Github</Link>
                             </div>
 
                             {/* Splash box */}
