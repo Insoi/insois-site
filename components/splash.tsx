@@ -2,13 +2,18 @@
 
 import { useEffect, useState } from "react";
 
-const splashWords = [
-  "Welcome!",
+const generalSplashes = [
+  "Welcome to my landing page fellow traveler!",
+  "The font used on Insoi reminds of Black Midi",
   "This splash text was stolen from Ransomwave",
-    "[[Hyperlink Blocked]]",
+  "Despite everything, it's still you.",
+  "Splash text was actually invented by me",
+  "Play my games and read my journal guys >.>",
+  "Happy todays day and tomorrows day",
+  "Smoke weed and relax! All will be fine"
 ];
 
-const bdaySplashes = ["Bring out cakes, candles & all that shit", "Guess who just got 1 year older"];
+const bdaySplashes = ["Bring out cakes, candles & all that for me", "Guess who just got 1 year older"];
 const foolSplashes = ["APRIL FOOLS!!"];
 const octoberSplashes = [
   "BOO!",
@@ -19,7 +24,7 @@ const octoberSplashes = [
 const givethankSplashes = [
   "Happy Thanksgiving!",
   "Happy Givesthanking!",
-  "Happy holidays you americans",
+  "Happy holidays fellow americans",
   "What's the count on turkey genocide?",
 ];
 const snowySplashes = [
@@ -32,7 +37,7 @@ const snowySplashes = [
   "Santa is real!",
   "Happy birthday, Jesus!",
 ];
-const newyearSplash = ["Happy New Year!", "World's ending today!"];
+const newyearSplash = ["Happy New Year!", "Worlds ending today!"];
 
 function randomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
@@ -57,7 +62,7 @@ function getSplash(): string {
     return randomItem(newyearSplash);
   }
 
-  return randomItem(splashWords);
+  return randomItem(generalSplashes);
 }
 
 export default function SplashText() {
@@ -69,10 +74,17 @@ export default function SplashText() {
 
   return (
     <>
-      <div className="rotate-[-10deg]">
-        <p className="absolute text-yellow-300 ml-[65%] text-[100%] text-shadow-[3px_3px_#070700] text-center animate-[pop_0.58s_infinite] whitespace-pre-line font-[minecraft]">
-          {splash}
-        </p>
+      <div style={{
+        border: '2.5px dashed #444433',
+        padding: '1.15rem 0.4rem',
+        fontFamily: 'stretch-pro',
+        fontSize: '1.2rem',
+        lineHeight: 1,
+        textAlign: 'center',
+        maxWidth: '390px',
+        color: "#DDDDCC"
+      }}>
+        {splash}
       </div>
     </>
   );
