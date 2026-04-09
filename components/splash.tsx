@@ -10,7 +10,8 @@ const generalSplashes = [
   "Splash text was actually invented by me",
   "Play my games and read my journal guys >.>",
   "Happy todays day and tomorrows day",
-  "Smoke weed and relax! All will be fine"
+  "Smoke weed and relax! All will be fine",
+  "Vic was here—go and find his eight pages.",
 ];
 
 const bdaySplashes = ["Bring out cakes, candles & all that for me", "Guess who just got 1 year older"];

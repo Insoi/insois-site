@@ -44,7 +44,7 @@ export default function frontpageClient() {
                     background: "rgba(43, 43, 43, 0.33)",
                     border: "2px solid #444433",
                     borderBottomWidth: "0",
-                    padding: "0rem 2.5rem 0.5rem 2.5rem",
+                    padding: "0rem 2.5rem 1rem 2.5rem",
                 }}>
                     <div style={{ display: 'flex', alignItems: 'flex-end', margin: '-1rem 0rem 0.75rem -3.5rem' }}>
                         <Image src="/images/icon.png" alt="Insoi logo" width={175} height={175} />
@@ -64,7 +64,7 @@ export default function frontpageClient() {
                         {/* Left: Pages */}
                         <div>
                             <h1 style={{ fontFamily: 'stretch-pro', color: "#DDDDCC", fontSize: "1.5rem" }}>Pages</h1>
-                            <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.25rem", fontFamily: "karmilla-regular", color: "#DDDDCC" }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.15rem", fontFamily: "karmilla-regular", color: "#DDDDCC" }}>
                                 {pages.map(({ label, href }) => (
                                     <Link key={href} href={href} style={linkStyle}>{label}</Link>
                                 ))}
@@ -76,9 +76,9 @@ export default function frontpageClient() {
 
                         {/* Right: Journal */}
                         <div style={{ overflowY: 'auto', maxHeight: '260px' }}>
-                            <h2 style={{ marginBottom: '0.25rem', color: "#DDDDCC" }}>Journal ✳</h2>
-                            <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: "#DDDDCC" }}>11-03-2026</p>
-                            <p style={{ fontSize: '0.85rem', lineHeight: 1.6, color: "#DDDDCC" }}>
+                            <h2 style={{ color: "#DDDDCC", fontSize: "1.5rem" }}>Journal ✎ᝰ.ᐟ⋆⑅˚₊</h2>
+                            <p style={{ ...linkStyle, fontFamily: "karmilla-bold", fontSize: "1.15rem", marginBottom: '0.5rem', color: "#DDDDCC" }}>11-03-2026</p>
+                            <p style={{ fontFamily: "karmilla-regular", fontSize: '1.15rem', lineHeight: 1.15, color: "#DDDDCC" }}>
                                 V'ex eaque sonini invidia w "septima" ad praesuli nisl li semine.
                                 Ad se ac velit hac, M duis si succubam d tempus nativa.
                                 Eget "imperia" ille ad nunc ea v per in obsequio repellendus
