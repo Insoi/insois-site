@@ -61,7 +61,7 @@ export default function frontpageClient() {
 
                         {/* Left: Pages */}
                         <div>
-                            <h1 style={{ fontFamily: 'stretch-pro', color: "#DDDDCC", fontSize: "1.5rem" }}>Pages</h1>
+                            <h1 style={{ fontFamily: 'stretch-pro', color: "#DDDDCC", fontSize: "1.5rem" }}>{tx.pages}</h1>
                             <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.15rem", fontFamily: "karmilla-regular", color: "#DDDDCC" }}>
                                 {tx.pageLinks.map(({ label, href }) => (
                                     <Link key={href} href={href} style={underlineStyle}>{label}</Link>
@@ -74,7 +74,7 @@ export default function frontpageClient() {
 
                         {/* Right: Journal */}
                         <div style={{ overflowY: 'auto', maxHeight: '260px' }}>
-                            <h2 style={{ color: "#DDDDCC", fontSize: "1.5rem" }}>Journal ✎ᝰ.ᐟ⋆⑅˚₊</h2>
+                            <h2 style={{ color: "#DDDDCC", fontSize: "1.5rem" }}>{tx.journal} ✎ᝰ.ᐟ⋆⑅˚₊</h2>
                             <p style={{ ...underlineStyle, fontFamily: "karmilla-bold", fontSize: "1.15rem", marginBottom: '0.5rem', color: "#DDDDCC" }}>11-03-2026</p>
                             <p style={{ fontFamily: "karmilla-regular", fontSize: '1.15rem', lineHeight: 1.15, color: "#DDDDCC" }}>
                                 V'ex eaque sonini invidia w "septima" ad praesuli nisl li semine.
