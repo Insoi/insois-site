@@ -1,0 +1,108 @@
+export const t = {
+    en: {
+        subtitle: "I am a developer, drummer, and so-called artist.",
+        subtitleRest: "Sharing my projects, games and whatever else I keep starting but never finishing.",
+        pages: "Pages",
+        journal: "Journal",
+        pageLinks: [
+            {label: "About me", href: "/"},
+            {label: "Art Gallery", href: "/art"},
+            {label: "Projects", href: "/projects"},
+            {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
+            {label: "Games", href: "/games"},
+            {label: "Github", href: "https://github.com/insoi"},
+        ],
+
+        // Splash texts
+        generalSplashes: [
+            "Welcome to my landing page fellow traveler!",
+            "The font used on Insoi reminds of Black Midi",
+            "This splash text was stolen from Ransomwave",
+            "Despite everything, it's still you.",
+            "Splash text was actually invented by me",
+            "Play my games and read my journal guys >.>",
+            "Happy todays day and tomorrows day",
+            "Smoke weed and relax! All will be fine",
+            "Vic was here—go and find his eight pages.",
+        ],
+        bdaySplashes: ["Bring out cakes, candles & all that for me", "Guess who just got 1 year older"],
+        foolSplashes: ["APRIL FOOLS!!"],
+        octoberSplashes: [
+            "BOO!",
+            "Spooky!",
+            "It is the spooky month!",
+            "2spooky4me",
+        ],
+        givethankSplashes: [
+            "Happy Thanksgiving!",
+            "Happy Givesthanking!",
+            "Happy holidays fellow americans",
+            "What's the count on turkey genocide?",
+        ],
+        snowySplashes: [
+            "Merry Christmas!!",
+            "Happy Chrimas!",
+            "Happy Holidays!",
+            "¡Feliz Navidad!",
+            "Christmas is a corporate invention!",
+            "SANTA ISNT REAL SANTA ISNT REAL SANTA ISNT REAL SANTA ISNT REAL",
+            "Santa is real!",
+            "Happy birthday, Jesus!",
+        ],
+        newyearSplash: ["Happy New Year!", "Worlds ending today!"],
+    },
+    dk: {
+        subtitle: "Jeg er en developer, trommeslager og såkaldt kunstner.",
+        subtitleRest: "Deler mine projekter, spil og alt det jeg starter men aldrig færdiggør.",
+        pages: "Sider",
+        journal: "Journal",
+        pageLinks: [
+            {label: "Om mig", href: "/"},
+            {label: "Kunstgalleri", href: "/art"},
+            {label: "Projekter", href: "/projects"},
+            {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
+            {label: "Mine spil", href: "/games"},
+            {label: "Github", href: "https://github.com/insoi"},
+        ],
+
+        // splash texts
+        generalSplashes: [
+            "Velkommen til min landingsside, medrejsende!",
+            "Fonten brugt på Insoi minder om Black Midi",
+            "Denne splash tekst er stjålet fra Ransomwave",
+            "På trods af alt er det stadig dig.",
+            "Splash tekst blev faktisk opfundet af mig",
+            "Spil mine spil og læs min journal folkens >.>",
+            "Glædig dag og glædig dag i morgen",
+            "Ryg hash og slap af! Alt skal nok gå",
+            "Vic var her—gå og find hans otte sider.",
+        ],
+        bdaySplashes: ["Frem med kager, stearinlys og alt det der til mig", "Gæt hvem der lige er blevet 1 år ældre"],
+        foolSplashes: ["APRILSNAR!!"],
+        octoberSplashes: [
+            "BØH!",
+            "Uhyggeligt!",
+            "Det er den uhyggelige måned!",
+            "2uhyggelig4mig",
+        ],
+        givethankSplashes: [
+            "Glædelig Thanksgiving!",
+            "Glædelig Givesthanking!",
+            "Glædelige helligdage, amerikanere",
+            "Hvad er tallet for kalkun folkedrab?",
+        ],
+        snowySplashes: [
+            "Glædelig jul!!",
+            "Glædelig juul!!",
+            "Glædelige helligdage!",
+            "¡Feliz Navidad!",
+            "Jul er en virksomhedsopfindelse!",
+            "JULEMANDEN ER IKKE VIRKELIG JULEMANDEN ER IKKE VIRKELIG JULEMANDEN ER IKKE VIRKELIG",
+            "Julemanden er virkelig!",
+            "Tillykke med fødselsdagen, Jesus!",
+        ],
+        newyearSplash: ["Godt nytår!", "Verdens undergang er i dag!"],
+    },
+} as const;
+
+export type Lang = keyof typeof t;

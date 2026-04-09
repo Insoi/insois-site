@@ -1,30 +1,27 @@
 'use client';
 
-import ProfilePicture from "@/components/pfp";
+import React, { useState } from "react";
 import Link from "next/link";
 import ShaderCanvas from "./ShaderCanvas";
 import SplashText from "./splash"
+import {t, Lang} from "../content/translations";
+import LangToggle from "./language-toggle"
 import Image from "next/image";
 
-const pages = [
-    {label: "About me", href: "/"},
-    {label: "Art Gallery", href: "/art"},
-    {label: "Projects", href: "/projects"},
-    {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
-    {label: "Games", href: "/games"},
-    {label: "Github", href: "https://github.com/insoi"}
-]
-
-const linkStyle = {
+const underlineStyle = {
     textDecorationLine: 'underline',
     textDecorationColor: "#888877",
     textDecorationThickness: "3px",
     textUnderlineOffset: "2px",
+    width: 'fit-content',
 };
 
 {/* gets used on the main front page from client stored on server components */}
 
 export default function frontpageClient() {
+    const [lang, setLang] = useState<Lang>("en");
+    const tx = t[lang];
+
     return (
         <div style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
             <ShaderCanvas />
@@ -45,15 +42,16 @@ export default function frontpageClient() {
                     border: "2px solid #444433",
                     borderBottomWidth: "0",
                     padding: "0rem 2.5rem 1rem 2.5rem",
+                    pointerEvents: 'all',
                 }}>
                     <div style={{ display: 'flex', alignItems: 'flex-end', margin: '-1rem 0rem 0.75rem -3.5rem' }}>
                         <Image src="/images/icon.png" alt="Insoi logo" width={175} height={175} />
                         <h1 style={{ fontFamily: 'weiss-rundgotisch', fontSize: '6rem', margin: "0 0 -20px 0", color: "#DDDDCC"}}>Insoi</h1>
                     </div>
 
-                    <p style={{ margin: '0rem 22rem 1.3rem 0rem', lineHeight: 1, fontSize: '1.2rem', color: "#888877", fontFamily: "karmilla-regular" }}>
-                        <span style={{ color: "#DDDDCC", fontFamily: "karmilla-bold" }}>I am a developer, drummer, and so-called artist.</span>{" "}
-                        Sharing my projects, games and whatever else I keep starting but never finishing.
+                    <p style={{ margin: '0rem 22rem 1.2rem 0rem', lineHeight: 1.1, fontSize: '1.2rem', color: "#888877", fontFamily: "karmilla-regular" }}>
+                        <span style={{ color: "#DDDDCC", fontFamily: "karmilla-bold" }}>{tx.subtitle}</span>{" "}
+                        {tx.subtitleRest}
                     </p>
 
                     <hr style={{ borderColor: 'rgba(255,255,255,0.2)', marginBottom: '0.8rem' }} />
@@ -65,19 +63,19 @@ export default function frontpageClient() {
                         <div>
                             <h1 style={{ fontFamily: 'stretch-pro', color: "#DDDDCC", fontSize: "1.5rem" }}>Pages</h1>
                             <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.15rem", fontFamily: "karmilla-regular", color: "#DDDDCC" }}>
-                                {pages.map(({ label, href }) => (
-                                    <Link key={href} href={href} style={linkStyle}>{label}</Link>
+                                {tx.pageLinks.map(({ label, href }) => (
+                                    <Link key={href} href={href} style={underlineStyle}>{label}</Link>
                                 ))}
                             </div>
 
                             {/* Splash box */}
-                            <SplashText />
+                            <SplashText lang={lang} />
                         </div>
 
                         {/* Right: Journal */}
                         <div style={{ overflowY: 'auto', maxHeight: '260px' }}>
                             <h2 style={{ color: "#DDDDCC", fontSize: "1.5rem" }}>Journal ✎ᝰ.ᐟ⋆⑅˚₊</h2>
-                            <p style={{ ...linkStyle, fontFamily: "karmilla-bold", fontSize: "1.15rem", marginBottom: '0.5rem', color: "#DDDDCC" }}>11-03-2026</p>
+                            <p style={{ ...underlineStyle, fontFamily: "karmilla-bold", fontSize: "1.15rem", marginBottom: '0.5rem', color: "#DDDDCC" }}>11-03-2026</p>
                             <p style={{ fontFamily: "karmilla-regular", fontSize: '1.15rem', lineHeight: 1.15, color: "#DDDDCC" }}>
                                 V'ex eaque sonini invidia w "septima" ad praesuli nisl li semine.
                                 Ad se ac velit hac, M duis si succubam d tempus nativa.
@@ -120,9 +118,7 @@ export default function frontpageClient() {
 
                     {/* Footer */}
                     <div style={{ marginTop: '2rem', fontSize: '0.8rem', fontFamily: "stretch-pro" }}>
-                        <button style={{ background: 'none', border: 'none', color: '#DDDDCC', cursor: 'pointer', padding: 0 }}>EN</button>
-                        {" / "}
-                        <button style={{ background: 'none', border: 'none', color: '#DDDDCC', cursor: 'pointer', padding: 0 }}>DK</button>
+                        <LangToggle lang={lang} setLang={setLang} />
                     </div>
 
                 </div>

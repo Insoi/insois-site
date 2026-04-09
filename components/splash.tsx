@@ -1,77 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import {t, Lang} from "../content/translations";
 
-const generalSplashes = [
-  "Welcome to my landing page fellow traveler!",
-  "The font used on Insoi reminds of Black Midi",
-  "This splash text was stolen from Ransomwave",
-  "Despite everything, it's still you.",
-  "Splash text was actually invented by me",
-  "Play my games and read my journal guys >.>",
-  "Happy todays day and tomorrows day",
-  "Smoke weed and relax! All will be fine",
-  "Vic was here—go and find his eight pages.",
-];
-
-const bdaySplashes = ["Bring out cakes, candles & all that for me", "Guess who just got 1 year older"];
-const foolSplashes = ["APRIL FOOLS!!"];
-const octoberSplashes = [
-  "BOO!",
-  "Spooky!",
-  "It is the spooky month!",
-  "2spooky4me",
-];
-const givethankSplashes = [
-  "Happy Thanksgiving!",
-  "Happy Givesthanking!",
-  "Happy holidays fellow americans",
-  "What's the count on turkey genocide?",
-];
-const snowySplashes = [
-  "Merry Christmas!!",
-  "Happy Chrimas!",
-  "Happy Holidays!",
-  "¡Feliz Navidad!",
-  "Christmas is a corporate invention!",
-  "SANTA ISNT REAL SANTA ISNT REAL SANTA ISNT REAL SANTA ISNT REAL",
-  "Santa is real!",
-  "Happy birthday, Jesus!",
-];
-const newyearSplash = ["Happy New Year!", "Worlds ending today!"];
-
-function randomItem<T>(arr: T[]): T {
+function randomItem<T>(arr: readonly T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function getSplash(): string {
+function getSplash(tx: typeof t["en"]): string {
   const now = new Date();
   const day = now.getDate();
   const month = now.getMonth() + 1;
 
-  if (day === 23 && month === 4) {
-    return randomItem(bdaySplashes);
-  } else if (day === 1 && month === 4) {
-    return randomItem(foolSplashes);
-  } else if (month === 10) {
-    return randomItem(octoberSplashes);
-  } else if (month === 11 && day === 28) {
-    return randomItem(givethankSplashes);
-  } else if (month === 12 && (day === 18 || day === 25)) {
-    return randomItem(snowySplashes);
-  } else if (month === 1 && day === 1) {
-    return randomItem(newyearSplash);
-  }
+  if (day === 23 && month === 4) return randomItem(tx.bdaySplashes);
+   else if (day === 1 && month === 4) return randomItem(tx.foolSplashes);
+   else if (month === 10) return randomItem(tx.octoberSplashes);
+   else if (month === 11 && day === 28) return randomItem(tx.givethankSplashes);
+   else if (month === 12 && (day === 18 || day === 25)) return randomItem(tx.snowySplashes);
+   else if (month === 1 && day === 1) return randomItem(tx.newyearSplash);
 
-  return randomItem(generalSplashes);
+  return randomItem(tx.generalSplashes);
 }
 
-export default function SplashText() {
+export default function SplashText({lang}: {lang: Lang}) {
   const [splash, setSplash] = useState<string>("");
 
   useEffect(() => {
-    setSplash(getSplash());
-  }, []);
+    const tx = t[lang];
+    setSplash(getSplash(tx));
+  }, [lang]);
 
   return (
     <>
