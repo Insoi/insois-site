@@ -58,6 +58,14 @@ body {
   font-style: normal;
 }
 
+.underline-style {
+  text-decoration-line: underline;
+  text-decoration-color: #888877;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 2px;
+  width: fit-content;
+}
+
 h1, h2, h3 {
   font-family: "stretch-pro";
 }

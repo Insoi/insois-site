@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import FrontpageClient from "@/components/frontpage-client";
+import FrontpageClient from "../components/frontpage-client";
+import { getAllPosts } from "../content/journal-index";
 
 export const metadata: Metadata = {
   title: "𝕴𝖓𝖘𝖔𝖎",
@@ -9,5 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function Frontpage() {
-  return <FrontpageClient />;
+  const enPosts = getAllPosts("en");
+  const dkPosts = getAllPosts("dk");
+  return <FrontpageClient enPosts={enPosts} dkPosts={dkPosts} />;
 }
