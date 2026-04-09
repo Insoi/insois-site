@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import {t, Lang} from "../content/translations";
 
-type Tx = typeof[Lang]
+type Tx = (typeof t)[Lang];
 
 function randomItem<T>(arr: readonly T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
