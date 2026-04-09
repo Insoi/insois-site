@@ -5,7 +5,7 @@ export const t = {
         pages: "Pages",
         journal: "Journal",
         pageLinks: [
-            {label: "About me", href: "/"},
+            {label: "My Journal", href: "/"},
             {label: "Art Gallery", href: "/art"},
             {label: "Projects", href: "/projects"},
             {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
@@ -57,7 +57,7 @@ export const t = {
         pages: "Sider",
         journal: "Journal",
         pageLinks: [
-            {label: "Om mig", href: "/"},
+            {label: "Journal", href: "/"},
             {label: "Kunstgalleri", href: "/art"},
             {label: "Projekter", href: "/projects"},
             {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},

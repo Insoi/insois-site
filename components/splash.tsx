@@ -3,11 +3,13 @@
 import React, { useEffect, useState } from "react";
 import {t, Lang} from "../content/translations";
 
+type Tx = typeof[Lang]
+
 function randomItem<T>(arr: readonly T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function getSplash(tx: typeof t["en"]): string {
+function getSplash(tx: Tx): string {
   const now = new Date();
   const day = now.getDate();
   const month = now.getMonth() + 1;

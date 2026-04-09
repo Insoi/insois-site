@@ -43,7 +43,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
                     background: "rgba(43, 43, 43, 0.33)",
                     border: "2px solid #444433",
                     borderBottomWidth: "0",
-                    padding: "0rem 2.5rem 1rem 2.5rem",
+                    padding: "0rem 2.5rem 0rem 2.5rem",
                     pointerEvents: 'all',
                 }}>
                     <div style={{ display: 'flex', alignItems: 'flex-end', margin: '-1rem 0rem 0.75rem -3.5rem' }}>
@@ -79,7 +79,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
                     </div>
 
                     {/* Footer */}
-                    <div style={{ marginTop: '2rem', fontSize: '0.8rem', fontFamily: "stretch-pro" }}>
+                    <div style={{ margin: '0rem 0rem 1rem 0rem', fontSize: '0.8rem', fontFamily: "stretch-pro" }}>
                         <LangToggle lang={lang} setLang={setLang} />
                     </div>
 

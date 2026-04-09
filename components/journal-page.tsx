@@ -5,7 +5,7 @@ import React from "react";
 
 export default function JournalPage({ posts, lang }: { posts: JournalPost[]; lang: Lang }) {
     return (
-        <div style={{ overflowY: "auto", maxHeight: "260px" }}>
+        <div style={{ overflowY: "auto", maxHeight: "320px" }}>
             <h2 style={{ color: "#DDDDCC", fontSize: "1.5rem" }}>
                 Journal ✎ᝰ.ᐟ⋆⑅˚₊
             </h2>
