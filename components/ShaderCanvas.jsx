@@ -1,4 +1,4 @@
-//'use client';
+'use client';
 import { useEffect, useRef } from 'react';
 
 // Source: https://fragcoord.xyz/s/vkh37ni4
