@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import {t, Lang} from "../content/translations";
+import {t, Lang} from "@/content/translations";
 
 type Tx = (typeof t)[Lang];
 

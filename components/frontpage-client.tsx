@@ -7,9 +7,9 @@ import Image from "next/image";
 import ShaderCanvas from "./ShaderCanvas";
 import SplashText from "./splash";
 import JournalPage from "./journal-page";
-import { JournalPost } from "../content/journal-index";
+import { JournalPost } from "@/content/journal-index";
 
-import {t, Lang} from "../content/translations";
+import {t, Lang} from "@/content/translations";
 import LangToggle from "./language-toggle";
 
 type Props = {
@@ -75,7 +75,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
                         </div>
 
                         {/* Right: Journal */}
-                        <JournalPage posts={posts} lang={lang} />
+                        <JournalPage posts={posts} />
                     </div>
 
                     {/* Footer */}

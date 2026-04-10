@@ -1,9 +1,9 @@
 import ReactMarkdown from "react-markdown";
-import { JournalPost } from "../content/journal-index";
-import { Lang } from "../content/translations";
+import { JournalPost } from "@/content/journal-index";
 import React from "react";
 
-export default function JournalPage({ posts, lang }: { posts: JournalPost[]; lang: Lang }) {
+export default function JournalPage({ posts }: { posts: JournalPost[] }) {
+    // noinspection JSUnusedGlobalSymbols
     return (
         <div style={{ overflowY: "auto", maxHeight: "320px" }}>
             <h2 style={{ color: "#DDDDCC", fontSize: "1.5rem" }}>
