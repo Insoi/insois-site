@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Base */
+h1, h2, h3 {
+    font-family: "stretch-pro";
+    color: #DDDDCC;
+}
+
+p {
+    color: #DDDDCC;
+    font-family: "karmilla-regular";
+}
+
+a {
+    color: #DDDDCC;
+}
+
+/* Fonts*/
+
+@font-face {
+    font-family: "weiss-rundgotisch";
+    src: url("/fonts/weiss-rundgotisch.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "karmilla-regular";
+    src: url("/fonts/karmilla-regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "karmilla-bold";
+    src: url("/fonts/karmilla-bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "stretch-pro";
+    src: url("/fonts/stretch-pro.ttf") format("truetype");
+}
+
+/* Interactive underline for texts */
+.underline-style-static,
+.underline-style {
+    font-family: "karmilla-regular";
+    text-decoration-line: underline;
+    text-decoration-color: #888877;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 2px;
+    width: fit-content;
+    transition: transform 0.15s ease, color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+@layer utilities {
+    .underline-style {
+        display: inline-block;
+    }
+
+    .underline-style:hover {
+        transform: scale(1.06) translateY(-1px);
+        color: #ffffff;
+        text-decoration-color: #ddddcc;
+        cursor: pointer;
+    }
+
+    .underline-style:active {
+        transform: scale(0.97) translateY(0px);
+        transition-duration: 0.07s;
+    }
+}

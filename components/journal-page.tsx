@@ -6,44 +6,44 @@ export default function JournalPage({ posts }: { posts: JournalPost[] }) {
     // noinspection JSUnusedGlobalSymbols
     return (
         <div style={{ overflowY: "auto", maxHeight: "320px" }}>
-            <h2 style={{ color: "#DDDDCC", fontSize: "1.5rem" }}>
+            <h1 style={{ fontSize: "1.5rem" }}>
                 Journal ✎ᝰ.ᐟ⋆⑅˚₊
-            </h2>
+            </h1>
             {posts.map((post) => (
                 <div key={post.slug} style={{ marginBottom: "1.5rem" }}>
-                    <p className="underline-style" style={{ fontFamily: "karmilla-bold", fontSize: "1.15rem", marginBottom: "0.5rem", color: "#DDDDCC" }}>
+                    <p className="underline-style-static" style={{ fontFamily: "karmilla-bold", fontSize: "1.15rem", marginBottom: "0.5rem", color: "#DDDDCC" }}>
                         {post.date}
                     </p>
                     <ReactMarkdown
                         components={{
                             h2: ({ children }) => (
-                                <h2 style={{ fontFamily: "stretch-pro", fontSize: "1.2rem", color: "#DDDDCC", marginBottom: "0.5rem" }}>
+                                <h2 style={{ fontSize: "1.2rem", marginBottom: "0.5rem" }}>
                                     {children}
                                 </h2>
-                            ),
+                            ), // heading
                             p: ({ children }) => (
-                                <p style={{ fontFamily: "karmilla-regular", fontSize: "1.15rem", lineHeight: 1.15, color: "#DDDDCC", marginBottom: "0.75rem" }}>
+                                <p style={{ fontSize: "1.15rem", lineHeight: 1.15, marginBottom: "0.75rem" }}>
                                     {children}
                                 </p>
-                            ),
+                            ), // general unedited text
                             strong: ({ children }) => (
-                                <strong style={{ fontFamily: "karmilla-bold", color: "#DDDDCC" }}>
+                                <strong style={{ fontFamily: "karmilla-bold" }}>
                                     {children}
                                 </strong>
-                            ),
+                            ), // bold text as **double asterisks**
                             a: ({ href, children }) => (
-                                <a href={href} className="underline-style" style={{ fontFamily: "karmilla-regular", color: "#DDDDCC" }}>
+                                <a href={href} className="underline-style">
                                     {children}
                                 </a>
-                            ),
+                            ), // links embedded
                             hr: () => (
-                                <hr style={{ borderColor: "rgba(255,255,255,0.2)", margin: "0.75rem 0" }} />
-                            ),
+                                <hr style={{ borderColor: "rgba(255,255,255,0.2)", margin: "0.5rem 0" }} />
+                            ), // divider as ---
                             ul: ({ children }) => (
-                                <ul style={{ paddingLeft: "1.2rem", color: "#DDDDCC", fontFamily: "karmilla-regular", fontSize: "1.15rem" }}>
+                                <ul style={{ paddingLeft: "1.2rem", fontSize: "1.15rem", listStyleType: "disc", fontFamily: "karmilla-bold", color: "#DDDDCC" }}>
                                     {children}
                                 </ul>
-                            ),
+                            ), // list margin as -
                         }}
                     >
                         {post.body}

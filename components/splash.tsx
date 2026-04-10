@@ -34,18 +34,16 @@ export default function SplashText({lang}: {lang: Lang}) {
 
   return (
     <>
-      <div style={{
+      <h1 style={{
         border: '2.5px dashed #444433',
         padding: '1.15rem 0.4rem',
-        fontFamily: 'stretch-pro',
         fontSize: '1.2rem',
         lineHeight: 1,
         textAlign: 'center',
         maxWidth: '390px',
-        color: "#DDDDCC"
       }}>
         {splash}
-      </div>
+      </h1>
     </>
   );
 }

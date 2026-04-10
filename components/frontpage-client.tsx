@@ -48,7 +48,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
                 }}>
                     <div style={{ display: 'flex', alignItems: 'flex-end', margin: '-1rem 0rem 0.75rem -3.5rem' }}>
                         <Image src="/images/icon.png" alt="Insoi logo" width={175} height={175} />
-                        <h1 style={{ fontFamily: 'weiss-rundgotisch', fontSize: '6rem', margin: "0 0 -20px 0", color: "#DDDDCC"}}>Insoi</h1>
+                        <div style={{ fontFamily: 'weiss-rundgotisch', fontSize: '6rem', margin: "0 0 -20px 0", color: "#DDDDCC"}}>Insoi</div>
                     </div>
 
                     <p style={{ margin: '0rem 22rem 1.2rem 0rem', lineHeight: 1.1, fontSize: '1.2rem', color: "#888877", fontFamily: "karmilla-regular" }}>
@@ -63,8 +63,8 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
 
                         {/* Left: Pages */}
                         <div>
-                            <h1 style={{ fontFamily: 'stretch-pro', color: "#DDDDCC", fontSize: "1.5rem" }}>{tx.pages}</h1>
-                            <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.15rem", fontFamily: "karmilla-regular", color: "#DDDDCC" }}>
+                            <h1 style={{ fontSize: "1.5rem" }}>{tx.pages}</h1>
+                            <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.15rem" }}>
                                 {tx.pageLinks.map(({ label, href }) => (
                                     <Link key={href} className={"underline-style"} href={href}>{label}</Link>
                                 ))}
@@ -79,7 +79,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
                     </div>
 
                     {/* Footer */}
-                    <div style={{ margin: '0rem 0rem 1rem 0rem', fontSize: '0.8rem', fontFamily: "stretch-pro" }}>
+                    <div style={{ margin: '0rem 0rem 1rem 0rem', fontSize: '0.8rem' }}>
                         <LangToggle lang={lang} setLang={setLang} />
                     </div>
 
