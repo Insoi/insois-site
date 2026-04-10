@@ -1,12 +1,7 @@
 //'use client';
 import { useEffect, useRef } from 'react';
 
-const VERT = `
-attribute vec2 a_position;
-void main() {
-  gl_Position = vec4(a_position, 0.0, 1.0);
-}
-`;
+// Source: https://fragcoord.xyz/s/vkh37ni4
 
 const FRAG = `
 precision highp float;
@@ -26,11 +21,10 @@ float hash(vec2 p) {
   return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
 }
 
-// Blue steel palette: map a 0..1 value to deep navy -> cold steel -> icy white
 vec4 yellowWarm(float t) {
   vec3 dark  = vec3(0.08, 0.07, 0.04);  // deep dark olive-black
   vec3 mid   = vec3(0.50, 0.48, 0.35);  // muted yellow-brown
-  vec3 light = vec3(0.87, 0.87, 0.80);  // #DDDDCC icy yellow-grey
+  vec3 light = vec3(0.87, 0.87, 0.80);  // #DDDDCC icy yellow-grey used throughout the whole color pallete
   vec3 col = t < 0.5
     ? mix(dark, mid,   t * 2.0)
     : mix(mid,  light, (t - 0.5) * 2.0);
@@ -40,42 +34,41 @@ vec4 yellowWarm(float t) {
 void main() {
   fragColor = vec4(0.0);
   vec3 dir = normalize(gl_FragCoord.rgb * 2.0 - vec3(u_resolution, 1.0).xyy);
-  // Yaw first (rotate around world Y), then pitch around the local right axis
   dir = rotateY(u_camera.x) * rotateX(u_camera.y) * dir;
 
   vec3 q, p;
   float z = 0.0;
   for (float d = 0.0, i = 0.0, j = 0.0; i++ < 50.0; ) {
-    p = z * dir - vec3(1.0, 2.0, 1.0); // POSITION
+    p = z * dir - vec3(1.0, 2.0, 1.0);
     for (q = p, d = p.y, j = 21.0; j > 0.01; j /= 4.0)
       q.xz *= rotate2D(1.0 + i / 600.0),
       d = max(d, min(min(q = j * 0.8 - abs(mod(q, j + j) - j), q.y).x, q.z));
     z += d;
     i++;
-    // brightness of this ray march step
     float brightness = 1.0 / (40.0 * exp(d * i * 3.0));
-    // use i to drive a subtle hue shimmer within the blue-steel range
     float t = clamp(0.15 + 0.5 * cos(i * 0.18 + 0.0) + 0.35, 0.0, 1.0);
     fragColor += yellowWarm(t) * brightness;
   }
-  // Crush darks, boost contrast for that dark steel feel
   fragColor.rgb = pow(fragColor.rgb, vec3(0.85));
   fragColor.rgb *= 0.9;
   fragColor.a = 1.0;
-  
-  // Subtle noise overlay
+
   float noise = hash(gl_FragCoord.xy) * 0.10 - 0.03;
   fragColor.rgb += noise;
 }
 `;
+
+const AUTO_ROTATE_SPEED = 0.00004;
+const DRAG_SPEED = 0.005;
 
 export default function ShaderCanvas() {
   const canvasRef = useRef(null);
   const glRef = useRef(null);
   const programRef = useRef(null);
   const rafRef = useRef(null);
-  const cameraRef = useRef({ yaw: 145 * Math.PI / 180, pitch: 0 });
+  const cameraRef = useRef({ yaw: 100 * Math.PI / 180, pitch: 0 }); // changing the starting position of the camera
   const dragRef = useRef({ active: false, lastX: 0, lastY: 0 });
+  const lastTimeRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -83,16 +76,15 @@ export default function ShaderCanvas() {
     if (!gl) return;
     glRef.current = gl;
 
-    // Check for GLSL ES 3.0
     const isGL2 = !!canvas.getContext('webgl2');
 
     const fragSrc = isGL2
-      ? `#version 300 es\nprecision highp float;\nout vec4 fragColor;\n${FRAG}`
-      : `precision highp float;\n#define fragColor gl_FragColor\n${FRAG}`;
+        ? `#version 300 es\nprecision highp float;\nout vec4 fragColor;\n${FRAG}`
+        : `precision highp float;\n#define fragColor gl_FragColor\n${FRAG}`;
 
     const vertSrc = isGL2
-      ? `#version 300 es\nin vec2 a_position;\nvoid main(){gl_Position=vec4(a_position,0,1);}`
-      : `attribute vec2 a_position;\nvoid main(){gl_Position=vec4(a_position,0,1);}`;
+        ? `#version 300 es\nin vec2 a_position;\nvoid main(){gl_Position=vec4(a_position,0,1);}`
+        : `attribute vec2 a_position;\nvoid main(){gl_Position=vec4(a_position,0,1);}`;
 
     function compile(type, src) {
       const s = gl.createShader(type);
@@ -125,16 +117,24 @@ export default function ShaderCanvas() {
     resize();
     window.addEventListener('resize', resize);
 
-    function render() {
+    function render(timestamp) {
+      // Auto-rotate yaw when not dragging
+      if (!dragRef.current.active) {
+        if (lastTimeRef.current !== null) {
+          const delta = timestamp - lastTimeRef.current;
+          cameraRef.current.yaw += AUTO_ROTATE_SPEED * delta;
+        }
+      }
+      lastTimeRef.current = timestamp;
+
       gl.useProgram(prog);
       gl.uniform2f(gl.getUniformLocation(prog, 'u_resolution'), canvas.width, canvas.height);
       gl.uniform2f(gl.getUniformLocation(prog, 'u_camera'), cameraRef.current.yaw, cameraRef.current.pitch);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       rafRef.current = requestAnimationFrame(render);
     }
-    render();
+    rafRef.current = requestAnimationFrame(render);
 
-    // Drag handlers
     function onDown(e) {
       dragRef.current.active = true;
       dragRef.current.lastX = e.clientX ?? e.touches?.[0].clientX;
@@ -149,13 +149,12 @@ export default function ShaderCanvas() {
       const dy = y - dragRef.current.lastY;
       dragRef.current.lastX = x;
       dragRef.current.lastY = y;
-      cameraRef.current.yaw += dx * 0.005;
-      // pitch: 0 = looking forward (level), positive = looking down
-      // allow only downward tilt up to ~30 degrees (0.524 rad), no looking up
-      cameraRef.current.pitch = Math.max(0, Math.min(0.524, cameraRef.current.pitch + dy * 0.005));
+      cameraRef.current.yaw += dx * DRAG_SPEED;
+      cameraRef.current.pitch = Math.max(0, Math.min(0.524, cameraRef.current.pitch + dy * DRAG_SPEED));
     }
     function onUp() {
       dragRef.current.active = false;
+      lastTimeRef.current = null;
       canvas.style.cursor = 'grab';
     }
 
@@ -188,12 +187,11 @@ export default function ShaderCanvas() {
               touchAction: 'none',
             }}
         />
-        {/* Darkening overlay */}
         <div style={{
           position: 'absolute',
           inset: 0,
           background: 'rgba(0, 0, 0, 0.55)',
-          pointerEvents: 'none',  // so dragging the shader still works trough stuff
+          pointerEvents: 'none',
         }} />
       </div>
   );
