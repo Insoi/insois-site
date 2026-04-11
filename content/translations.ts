@@ -5,11 +5,11 @@ export const t = {
         pages: "Pages",
         journal: "Journal",
         pageLinks: [
-            {label: "My Journal", href: "/"},
-            {label: "Art Gallery", href: "/art"},
-            {label: "Projects", href: "/projects"},
+            {label: "My Journal", page: "journal"},
+            {label: "Art Gallery", page: "art"},
+            {label: "Projects", page: "projects"},
             {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
-            {label: "Games", href: "/games"},
+            {label: "Games", page: "games"},
             {label: "Github", href: "https://github.com/insoi"},
         ],
 
@@ -57,11 +57,11 @@ export const t = {
         pages: "Sider",
         journal: "Journal",
         pageLinks: [
-            {label: "Journal", href: "/"},
-            {label: "Kunstgalleri", href: "/art"},
-            {label: "Projekter", href: "/projects"},
+            {label: "Journal", page: "journal"},
+            {label: "Kunstgalleri", page: "art"},
+            {label: "Projekter", page: "projects"},
             {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
-            {label: "Mine spil", href: "/games"},
+            {label: "Mine spil", page: "games"},
             {label: "Github", href: "https://github.com/insoi"},
         ],
 
