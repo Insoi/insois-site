@@ -20,19 +20,19 @@ body {
   background: transparent;
 }
 
-.journal-scroll::-webkit-scrollbar {
+.page-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
 
-.journal-scroll::-webkit-scrollbar-track {
+.page-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.journal-scroll::-webkit-scrollbar-thumb {
+.page-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(221, 221, 204, 0.3);
   border-radius: 3px;
 }
 
-.journal-scroll::-webkit-scrollbar-thumb:hover {
+.page-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(221, 221, 204, 0.6);
 }
