@@ -3,7 +3,10 @@ export const t = {
         subtitle: "I am a developer, drummer, and so-called artist.",
         subtitleRest: "Sharing my projects, games and whatever else I keep starting but never finishing.",
         pages: "Pages",
-        journal: "Journal",
+        journal: "Journal ✎ᝰ.ᐟ⋆⑅˚₊",
+        projects: "Projects </>",
+        art: "Art Gallery",
+        games: "My Games",
         pageLinks: [
             {label: "My Journal", page: "journal"},
             {label: "Art Gallery", page: "art"},
@@ -55,7 +58,10 @@ export const t = {
         subtitle: "Jeg er en developer, trommeslager og såkaldt kunstner.",
         subtitleRest: "Deler mine projekter, spil og alt det jeg starter men aldrig færdiggør.",
         pages: "Sider",
-        journal: "Journal",
+        journal: "Journal ✎ᝰ.ᐟ⋆⑅˚₊",
+        projects: "Projektor </>",
+        art: "Kunst Galleri",
+        games: "Mine Spil",
         pageLinks: [
             {label: "Journal", page: "journal"},
             {label: "Kunstgalleri", page: "art"},

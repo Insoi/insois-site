@@ -1,13 +1,16 @@
 import ReactMarkdown from "react-markdown";
 import { JournalPost } from "@/content/journal-index";
 import React from "react";
+import {t, Lang} from "@/content/translations";
 
-export default function JournalPage({ posts }: { posts: JournalPost[] }) {
+export default function JournalPage({ posts, lang }: { posts: JournalPost[], lang: Lang }) {
+    const tx = t[lang];
+
     // noinspection JSUnusedGlobalSymbols
     return (
         <div style={{ overflowY: "auto", maxHeight: "320px" }}>
             <h1 style={{ fontSize: "1.5rem" }}>
-                Journal ✎ᝰ.ᐟ⋆⑅˚₊
+                {tx.journal}
             </h1>
             {posts.map((post) => (
                 <div key={post.slug} style={{ marginBottom: "1.5rem" }}>

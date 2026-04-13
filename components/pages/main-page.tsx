@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 
-import Overhead from "./overhead"
-import SplashText from "./splash";
+import Overhead from "../overhead"
+import SplashText from "../splash";
 import ProjectsPage from "./projects-page";
 import GamesPage from "./games-page";
 import ArtPage from "./art-page";
@@ -11,7 +11,7 @@ import JournalPage from "./journal-page";
 import { JournalPost } from "@/content/journal-index";
 
 import {t, Lang} from "@/content/translations";
-import LangToggle from "./language-toggle";
+import LangToggle from "../language-toggle";
 
 type Page = "journal" | "projects" | "games" | "art";
 type Props = {
@@ -38,7 +38,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
     };
 
     const pageComponents: Record<Page, React.ReactNode> = {
-        journal: <JournalPage posts={posts}/>,
+        journal: <JournalPage posts={posts} lang={lang}/>,
         projects: <ProjectsPage lang={lang}/>,
         games: <GamesPage lang={lang}/>,
         art: <ArtPage lang={lang}/>

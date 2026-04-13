@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import FrontpageClient from "../components/container-page";
+import FrontpageClient from "../components/pages/main-page";
 import { getAllPosts } from "../content/journal-index";
 import ShaderCanvas from "@/components/ShaderCanvas";
 import React from "react";
