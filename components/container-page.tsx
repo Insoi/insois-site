@@ -42,7 +42,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
         projects: <ProjectsPage lang={lang}/>,
         games: <GamesPage lang={lang}/>,
         art: <ArtPage lang={lang}/>
-    }
+    };
 
     return (
         <>
