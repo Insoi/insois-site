@@ -54,14 +54,16 @@ a {
         display: inline-block;
     }
 
-    .underline-style:hover {
+    .underline-style:hover,
+    button:hover {
         transform: scale(1.06) translateY(-1px);
         color: #ffffff;
         text-decoration-color: #ddddcc;
         cursor: pointer;
     }
 
-    .underline-style:active {
+    .underline-style:active,
+    button:active {
         transform: scale(0.97) translateY(0px);
         transition-duration: 0.07s;
     }

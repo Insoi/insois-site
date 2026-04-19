@@ -2,9 +2,12 @@ export const t = {
     en: {
         subtitle: "I am a developer, drummer, and so-called artist.",
         subtitleRest: "Sharing my projects, games and whatever else I keep starting but never finishing.",
+
+        // pages
         pages: "Pages",
         journal: "Journal ✎ᝰ.ᐟ⋆⑅˚₊",
         projects: "Projects </>",
+        projectsSub: "Non-game projects",
         art: "Art Gallery",
         games: "My Games",
         pageLinks: [
@@ -14,6 +17,17 @@ export const t = {
             {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
             {label: "Games", page: "games"},
             {label: "Github", href: "https://github.com/insoi"},
+        ],
+
+        // project cards
+        cards: [
+            {
+                label: "Insoi.xyz",
+                description: "Source code for this website. Feel free to use for your own purposes.",
+                tags: ["Next.js", "Typescript", "Vercel"],
+                link: {label: "Github", href: "https://github.com/Insoi/insois-site"},
+                image: "@/public/images/projects/website.png",
+            },
         ],
 
         // Splash texts
@@ -27,6 +41,8 @@ export const t = {
             "Happy todays day and tomorrows day",
             "Smoke weed and relax! All will be fine",
             "Vic was here—go and find his eight pages.",
+            "Try looking around in the background with your mouse",
+            "Did you know, the background is made out of math fractals?",
         ],
         bdaySplashes: ["Bring out cakes, candles & all that for me", "Guess who just got 1 year older"],
         foolSplashes: ["APRIL FOOLS!!"],
@@ -57,9 +73,12 @@ export const t = {
     dk: {
         subtitle: "Jeg er en developer, trommeslager og såkaldt kunstner.",
         subtitleRest: "Deler mine projekter, spil og alt det jeg starter men aldrig færdiggør.",
+
+        // pages
         pages: "Sider",
         journal: "Journal ✎ᝰ.ᐟ⋆⑅˚₊",
         projects: "Projektor </>",
+        projectsSub: "Ikke-spilrelaterede projekter",
         art: "Kunst Galleri",
         games: "Mine Spil",
         pageLinks: [
@@ -69,6 +88,17 @@ export const t = {
             {label: "Discord", href: "https://discord.gg/sqDhRrgqve"},
             {label: "Mine spil", page: "games"},
             {label: "Github", href: "https://github.com/insoi"},
+        ],
+
+        // project cards
+        cards: [
+            {
+                label: "Insoi.xyz",
+                description: "Source code for this website. Feel free to use for your own purposes.",
+                tags: ["Next.js", "Typescript", "Vercel"],
+                link: {label: "Github", href: "https://github.com/Insoi/insois-site"},
+                image: "@/public/images/projects/website.png",
+            },
         ],
 
         // splash texts
@@ -82,6 +112,8 @@ export const t = {
             "Glædig dag og glædig dag i morgen",
             "Ryg hash og slap af! Alt skal nok gå",
             "Vic var her—gå og find hans otte sider.",
+            "Prøv at bevæge musen rundt i baggrunden",
+            "Vidste du, at baggrunden er lavet af matematiske fraktaler?",
         ],
         bdaySplashes: ["Frem med kager, stearinlys og alt det der til mig", "Gæt hvem der lige er blevet 1 år ældre"],
         foolSplashes: ["APRILSNAR!!"],
