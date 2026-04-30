@@ -23,10 +23,24 @@ export const t = {
         cards: [
             {
                 label: "Insoi.xyz",
-                description: "Source code for this website. Feel free to use for your own purposes.",
+                description: "Source code for this website. Feel free to use.",
                 tags: ["Next.js", "Typescript", "Vercel"],
-                link: {label: "Github", href: "https://github.com/Insoi/insois-site"},
-                image: "@/public/images/projects/website.png",
+                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
+                image: "/images/website.png",
+            },
+            {
+                label: "Precise Detector",
+                description: "Macro for detecting precision in the game BSS.",
+                tags: [".AHK", "Macro"],
+                link: {label: "Github⧉", href: "https://github.com/Insoi/Precision-Detector-BSS"},
+                image: "/images/PreciseIcon.png",
+            },
+            {
+                label: "Insoi.xyz",
+                description: "This duplicate is just used to fill out space.",
+                tags: ["Next.js", "Typescript", "Vercel"],
+                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
+                image: "/images/website.png",
             },
         ],
 
@@ -94,10 +108,17 @@ export const t = {
         cards: [
             {
                 label: "Insoi.xyz",
-                description: "Source code for this website. Feel free to use for your own purposes.",
+                description: "Source code for this website. Feel free to use.",
                 tags: ["Next.js", "Typescript", "Vercel"],
-                link: {label: "Github", href: "https://github.com/Insoi/insois-site"},
-                image: "@/public/images/projects/website.png",
+                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
+                image: "/images/website.png",
+            },
+            {
+                label: "Insoi.xyz",
+                description: "Source code for this website. Feel free to use.",
+                tags: ["Next.js", "Typescript", "Vercel"],
+                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
+                image: "/images/website.png",
             },
         ],
 

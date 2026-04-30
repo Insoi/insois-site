@@ -13,13 +13,13 @@ export default function JournalPage({lang}: {lang: Lang}) {
                 {tx.projects}
             </h1>
 
-            <div style={{ marginBottom: "1.5rem" }}>
-                <p className="underline-style-static" style={{ fontFamily: "karmilla-bold", fontSize: "1.15rem", marginBottom: "0.5rem", color: "#DDDDCC" }}>
+            <div style={{ marginBottom: "0.5rem" }}>
+                <p className="underline-style-static" style={{ fontFamily: "karmilla-bold", fontSize: "1.15rem", color: "#DDDDCC" }}>
                     {tx.projectsSub}
                 </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                 {tx.cards.map((card, index) => (
                     <ProjectsCard
                         key={index}
@@ -27,6 +27,7 @@ export default function JournalPage({lang}: {lang: Lang}) {
                         description={card.description}
                         tags={card.tags}
                         Github={card.link.href}
+                        image={card.image}
                     />
                 ))}
             </div>

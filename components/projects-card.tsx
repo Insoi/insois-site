@@ -13,43 +13,45 @@ export default function ProjectsCard({ image, title, description, tags, Github }
         <div style={{
             border: '3.5px solid #444433',
             display: 'grid',
-            gridTemplateColumns: '1.6fr 2fr',
+            gridTemplateColumns: '1.5fr 2.5fr',
             height: '150px',
-            width: '325px',
-            margin: "0rem 0rem 2rem 0rem"
+            width: '300px',
+            margin: "0rem 0rem 0.25rem 0rem",
+            overflow: 'hidden',
         }}>
-            <Image
-                src="/images/icon.png"
-                alt="Insoi logo"
-                width={165}
-                height={165}
-                style={{ margin: "-0.5rem -1rem -1.5rem 0rem" }}
-            />
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '0.6rem 0.75rem', overflow: 'hidden' }}>
+            {/* Left side */}
+            <div style={{ margin: "0rem -0.5rem 0rem 0.5rem", display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0.4rem 0' }}>
+                <Image
+                    src={image || '/images/website.png'}
+                    alt={`${title} logo`}
+                    width={135}
+                    height={135}
+                />
+            </div>
+
+            {/* Right side */}
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '0.4rem 0.45rem 0.4rem 0', minWidth: 0}}>
                 <div>
-                    <h2 style={{ textAlign: "center", margin: '0 0 0.25rem 0', fontSize: '1.2rem', color: '#DDDDCC' }}>
+                    <h2 style={{textAlign: "center", fontSize: '1.1rem', lineHeight: 1.1, color: '#DDDDCC'}}>
                         {title}
                     </h2>
-                    <p style={{ textAlign: "center", margin: 0, fontSize: '0.8rem', color: '#DDDDCC', lineHeight: 1.35 }}>
+                    <p style={{textAlign: "center", margin: '0.35rem 1rem 0 1rem', fontSize: '0.85rem', color: '#DDDDCC', lineHeight: 1.1, overflow: 'hidden'}}>
                         {description}
                     </p>
                 </div>
 
-                <div>
-                    <a href={Github} target="_blank" rel="noopener noreferrer" style={{
-                        display: 'block',
-                        fontSize: '1rem',
-                        color: '#DDDDCC',
-                        textDecoration: 'none',
-                        marginBottom: '0.2rem',
-                        textAlign: 'right',
-                    }}>
-                        Github
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                    <a href={Github} className="underline-style" style={{fontSize: '1rem', color: '#DDDDCC'}}>
+                        Github⧉
                     </a>
-                    <div style={{ display: 'flex', gap: '0.3rem', justifyContent: 'flex-end', flexWrap: 'nowrap' }}>
+
+                    <div style={{display: 'flex', gap: '0.25rem', justifyContent: 'flex-end', flexWrap: 'wrap'}}>
                         {tags.map((tag, i) => (
-                            <span key={i} style={{ fontSize: '0.6rem', color: '#DDDDCC', opacity: 0.75, whiteSpace: 'nowrap' }}>
-                                {tag}
+                            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                                {i > 0 && <span style={{ color: '#DDDDCC', opacity: 0.4, fontSize: '0.5rem' }}>●</span>}
+                                <span style={{ fontSize: '0.7rem', color: '#DDDDCC', opacity: 0.75, fontFamily: 'karmilla-bold' }}>
+                                    {tag}
+                                </span>
                             </span>
                         ))}
                     </div>
