@@ -29,18 +29,18 @@ export const t = {
                 image: "/images/website.png",
             },
             {
+                label: "Texel Splatting",
+                description: "This is the first ever recreation of Texel Splatting for Godot 4.6.",
+                tags: ["GDScript", "GDShader"],
+                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
+                image: "/images/cameraIcon.png",
+            },
+            {
                 label: "Precise Detector",
                 description: "Macro for detecting precision in the game BSS.",
                 tags: [".AHK", "Macro"],
                 link: {label: "Github⧉", href: "https://github.com/Insoi/Precision-Detector-BSS"},
-                image: "/images/PreciseIcon.png",
-            },
-            {
-                label: "Insoi.xyz",
-                description: "This duplicate is just used to fill out space.",
-                tags: ["Next.js", "Typescript", "Vercel"],
-                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
-                image: "/images/website.png",
+                image: "/images/PrecisionDetector.png",
             },
         ],
 
@@ -108,17 +108,24 @@ export const t = {
         cards: [
             {
                 label: "Insoi.xyz",
-                description: "Source code for this website. Feel free to use.",
+                description: "Kildekoden til hjemmesiden. Du er velkommen til at bruge den.",
                 tags: ["Next.js", "Typescript", "Vercel"],
                 link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
                 image: "/images/website.png",
             },
             {
-                label: "Insoi.xyz",
-                description: "Source code for this website. Feel free to use.",
-                tags: ["Next.js", "Typescript", "Vercel"],
+                label: "Texel Splatting",
+                description: "Den første genskabelse nogensinde af Texel Splatting til Godot 4.6.",
+                tags: ["GDScript", "GDShader"],
                 link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
-                image: "/images/website.png",
+                image: "/images/cameraIcon.png",
+            },
+            {
+                label: "Precise Detector",
+                description: "Makro til at refresh præcision i spillet BSS.",
+                tags: [".AHK", "Macro"],
+                link: {label: "Github⧉", href: "https://github.com/Insoi/Precision-Detector-BSS"},
+                image: "/images/PrecisionDetector.png",
             },
         ],
 
