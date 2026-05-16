@@ -1,7 +1,6 @@
 import React from "react";
 import {t, Lang} from "@/content/translations";
 import ProjectsCard from "@/components/projects-card";
-import ReactMarkdown from "react-markdown";
 
 export default function JournalPage({lang}: {lang: Lang}) {
     const tx = t[lang];

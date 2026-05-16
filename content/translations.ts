@@ -10,6 +10,7 @@ export const t = {
         projectsSub: "Non-game projects",
         art: "Art Gallery",
         games: "My Games",
+        gamesSub: "Game-related projects",
         pageLinks: [
             {label: "My Journal", page: "journal"},
             {label: "Art Gallery", page: "art"},
@@ -95,6 +96,7 @@ export const t = {
         projectsSub: "Ikke-spilrelaterede projekter",
         art: "Kunst Galleri",
         games: "Mine Spil",
+        gamesSub: "Spilrelaterede projektor",
         pageLinks: [
             {label: "Journal", page: "journal"},
             {label: "Kunstgalleri", page: "art"},
