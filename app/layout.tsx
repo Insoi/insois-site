@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NotificationProvider } from "@/components/notifcation";
 import "./globals.css";
 import "./typography.css"
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
         <body>
-        {children}
+        <NotificationProvider>
+            {children}
+        </NotificationProvider>
         </body>
         </html>
     );

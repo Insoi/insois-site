@@ -10,6 +10,7 @@ import ArtPage from "./art-page";
 import JournalPage from "./journal-page";
 import { JournalPost } from "@/content/journal-index";
 
+import { useNotification } from "../notifcation";
 import {t, Lang} from "@/content/translations";
 import LangToggle from "../language-toggle";
 
@@ -26,11 +27,17 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
     const [page, setPage] = useState<Page>("journal");
     const tx = t[lang];
     const posts = lang === "en" ? enPosts : dkPosts;
+    const { notification } = useNotification();
 
     const PAGE_ORDER: Page[] = ["journal", "art", "projects", "games"];
     const [direction, setDirection] = useState<"left" | "right">("right");
 
     const handleSetPage = (newPage: Page) => {
+        if (newPage === "games" || newPage === "art") {
+            notification("This page is currently under construction.", { variant: "warning" });
+            return;
+        }
+
         const oldIndex = PAGE_ORDER.indexOf(page);
         const newIndex = PAGE_ORDER.indexOf(newPage);
         setDirection(newIndex > oldIndex ? "right" : "left");
