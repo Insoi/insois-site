@@ -15,11 +15,11 @@ type ProjectsCardProps = {
 
 export default function ProjectsCard({ image, title, description, tags, Github }: ProjectsCardProps) {
     return (
-        <div style={{
+        <div className="project-card" style={{
             border: '0.2rem solid #444433',
             display: 'grid',
-            gridTemplateColumns: '1.5fr 2.5fr',
             minHeight: '9.375rem',
+            gridTemplateColumns: '1.5fr 2.5fr',
             width: '100%',
             margin: "0rem 0rem 0.25rem 0rem",
             overflow: 'hidden',

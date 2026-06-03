@@ -89,6 +89,12 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .project-card {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Remove fixed heights on scrollable panels for mobile */
 .page-panel {
   overflow-y: auto;

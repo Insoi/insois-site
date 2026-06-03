@@ -61,7 +61,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
         <>
             <Overhead tx={tx} />
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.42fr', gap: '2rem' }}>
+            <div className="main-grid">
                 <div>
                     <h1 style={{ fontSize: "1.5rem" }}>{tx.pages}</h1>
                     <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.15rem" }}>
