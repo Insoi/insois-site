@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 
 import Overhead from "../overhead"
 import SplashText from "../splash";
@@ -31,6 +31,15 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
 
     const PAGE_ORDER: Page[] = ["journal", "art", "projects", "games"];
     const [direction, setDirection] = useState<"left" | "right">("right");
+
+    useEffect(() => {
+        if (window.innerWidth <768) {
+            notification(
+                "This site is optimized for desktop - mobile is supported but not prioritized.",
+                { variant: "warning", duration: 5000}
+            )
+        }
+    })
 
     const handleSetPage = (newPage: Page) => {
         if (newPage === "games" || newPage === "art") {
