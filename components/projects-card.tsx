@@ -1,21 +1,26 @@
 import Image from "next/image";
 
+type GithubLink = {
+    href: string;
+    label: string;
+}
+
 type ProjectsCardProps = {
     image?: string,
     title: string,
     description: string,
     tags: readonly string[],
-    Github: string,
+    Github: GithubLink,
 }
 
 export default function ProjectsCard({ image, title, description, tags, Github }: ProjectsCardProps) {
     return (
         <div style={{
-            border: '3.5px solid #444433',
+            border: '0.2rem solid #444433',
             display: 'grid',
             gridTemplateColumns: '1.5fr 2.5fr',
-            height: '150px',
-            width: '300px',
+            minHeight: '9.375rem',
+            width: '100%',
             margin: "0rem 0rem 0.25rem 0rem",
             overflow: 'hidden',
         }}>
@@ -26,6 +31,7 @@ export default function ProjectsCard({ image, title, description, tags, Github }
                     alt={`${title} logo`}
                     width={135}
                     height={135}
+                    style={{ width: '100%', height: 'auto', maxWidth: '8.4375rem' }}
                 />
             </div>
 
@@ -41,8 +47,8 @@ export default function ProjectsCard({ image, title, description, tags, Github }
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                    <a href={Github} className="underline-style" style={{fontSize: '1rem', color: '#DDDDCC'}}>
-                        Github⧉
+                    <a href={Github.href} className="underline-style" style={{fontSize: '1rem', color: '#DDDDCC'}}>
+                        {Github.label}
                     </a>
 
                     <div style={{display: 'flex', gap: '0.25rem', justifyContent: 'flex-end', flexWrap: 'wrap'}}>

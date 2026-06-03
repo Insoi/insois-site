@@ -1,5 +1,5 @@
 ---
-date: 09-04-2026│ My Introduction
+date: 03-06-2026│ My Introduction
 title: Introduction
 ---
 I've never really written a journal or anything like it before. So as my first one, I want to announce a couple things. This journal will be used as a way to document development and my overall projects that I'm up to making. Essentially announcements about projects and such.

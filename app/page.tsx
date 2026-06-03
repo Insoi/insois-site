@@ -30,9 +30,9 @@ export default function Frontpage() {
         }}>
           <div style={{
             width: "100%",
-            maxWidth: '1150px',
+            maxWidth: "71.875rem",
             background: "rgba(43, 43, 43, 0.33)",
-            border: "2px solid #444433",
+            border: "0.125rem solid #444433",
             borderBottomWidth: "0",
             padding: "0rem 2.5rem 0rem 2.5rem",
             pointerEvents: 'all',

@@ -44,6 +44,12 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
         setPage(newPage);
     };
 
+    // TODO: remember to create translations and reference it for all notification strings
+    const handleSetLang = (newLang: Lang) => {
+        setLang(newLang);
+        notification(newLang === "en" ? "Changed language to English!" : "Skiftet sproget til dansk!", { variant: "success" });
+    }
+
     const pageComponents: Record<Page, React.ReactNode> = {
         journal: <JournalPage posts={posts} lang={lang}/>,
         projects: <ProjectsPage lang={lang}/>,
@@ -61,7 +67,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
                     <div style={{ display: 'grid', gridTemplateColumns: '0.3fr 1fr', gap: "0rem 1.2rem", lineHeight: 1.2, marginBottom: '1rem', fontSize: "1.15rem" }}>
                         {tx.pageLinks.map((link) => (
                             "href" in link
-                                ? <a key={link.href} className="underline-style" href={link.href} target="_blank">{link.label}</a>
+                                ? <a key={link.href} className="underline-style" href={link.href} target="_blank" onClick={() => notification("Redirecting you to specified link...", {variant: "success"})}>{link.label}</a>
                                 : <a key={link.page} className="underline-style" onClick={() => handleSetPage(link.page)}>{link.label}</a>
                         ))}
                     </div>
@@ -73,7 +79,7 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
             </div>
 
             <div style={{ margin: '0rem 0rem 1rem 0rem', fontSize: '0.8rem' }}>
-                <LangToggle lang={lang} setLang={setLang} />
+                <LangToggle lang={lang} setLang={handleSetLang} />
             </div>
         </>
     );

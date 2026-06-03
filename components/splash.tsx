@@ -35,12 +35,12 @@ export default function SplashText({lang}: {lang: Lang}) {
     return (
         <>
             <h1 style={{
-                border: '2.5px dashed #444433',
+                border: '0.156rem dashed #444433',
                 padding: '1.15rem 0.4rem',
                 fontSize: '1.2rem',
                 lineHeight: 1,
                 textAlign: 'center',
-                maxWidth: '390px',
+                maxWidth: '24.375rem',
             }}>
                 {splash}
             </h1>

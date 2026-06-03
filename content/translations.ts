@@ -31,9 +31,9 @@ export const t = {
             },
             {
                 label: "Texel Splatting",
-                description: "This is the first ever recreation of Texel Splatting for Godot 4.6.",
+                description: "This is the ever recreation of Texel Splatting for Godot 4.6.",
                 tags: ["GDScript", "GDShader"],
-                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
+                link: {label: "WIP⧉", href: "https://github.com/Insoi"},
                 image: "/images/cameraIcon.png",
             },
             {
@@ -119,7 +119,7 @@ export const t = {
                 label: "Texel Splatting",
                 description: "Den første genskabelse nogensinde af Texel Splatting til Godot 4.6.",
                 tags: ["GDScript", "GDShader"],
-                link: {label: "Github⧉", href: "https://github.com/Insoi/insois-site"},
+                link: {label: "WIP⧉", href: "https://github.com/Insoi"},
                 image: "/images/cameraIcon.png",
             },
             {

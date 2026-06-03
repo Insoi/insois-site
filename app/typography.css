@@ -43,8 +43,8 @@ a {
     font-family: "karmilla-regular";
     text-decoration-line: underline;
     text-decoration-color: #888877;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 2px;
+    text-decoration-thickness: 0.1875rem;
+    text-underline-offset: 0.125rem;
     width: fit-content;
     transition: transform 0.15s ease, color 0.15s ease, text-decoration-color 0.15s ease;
 }
@@ -56,7 +56,7 @@ a {
 
     .underline-style:hover,
     button:hover {
-        transform: scale(1.06) translateY(-1px);
+        transform: scale(1.06) translateY(-0.0625rem);
         color: #ffffff;
         text-decoration-color: #ddddcc;
         cursor: pointer;
@@ -64,7 +64,7 @@ a {
 
     .underline-style:active,
     button:active {
-        transform: scale(0.97) translateY(0px);
+        transform: scale(0.97) translateY(0rem);
         transition-duration: 0.07s;
     }
 }
