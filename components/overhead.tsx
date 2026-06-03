@@ -9,7 +9,7 @@ export default function Overhead({tx}: {tx: typeof t[Lang]}) {
                 <div style={{ fontFamily: 'weiss-rundgotisch', fontSize: '6rem', margin: "0 0 -20px 0", color: "#DDDDCC" }}>Insoi</div>
             </div>
 
-            <p style={{ margin: '0rem 22rem 1.2rem 0rem', lineHeight: 1.1, fontSize: '1.2rem', color: "#888877", fontFamily: "karmilla-regular" }}>
+            <p style={{ maxWidth: '44rem', margin: '0rem 0rem 1.2rem 0rem', lineHeight: 1.1, fontSize: '1.2rem', color: "#888877", fontFamily: "karmilla-regular" }}>
                 <span style={{ color: "#DDDDCC", fontFamily: "karmilla-bold" }}>{tx.subtitle}</span>{" "}
                 {tx.subtitleRest}
             </p>

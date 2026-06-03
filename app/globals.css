@@ -95,7 +95,6 @@ body {
   }
 }
 
-/* Remove fixed heights on scrollable panels for mobile */
 .page-panel {
   overflow-y: auto;
   max-height: 20rem;
@@ -108,7 +107,6 @@ body {
   }
 }
 
-/* Main content container:  padding on desktop, tight on mobile */
 .content-container {
   width: 100%;
   max-width: 71.875rem;
