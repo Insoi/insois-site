@@ -37,9 +37,9 @@ export default function FrontpageClient({ enPosts, dkPosts }: Props) {
             notification(
                 "This site is optimized for desktop - mobile is supported but not prioritized.",
                 { variant: "warning", duration: 5000}
-            )
+            );
         }
-    })
+    }, [notification]);
 
     const handleSetPage = (newPage: Page) => {
         if (newPage === "games" || newPage === "art") {
