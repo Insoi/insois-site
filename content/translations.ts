@@ -32,8 +32,8 @@ export const t = {
             {
                 label: "Texel Splatting",
                 description: "This is the ever recreation of Texel Splatting for Godot 4.6.",
-                tags: ["GDScript", "GDShader"],
-                link: {label: "WIP⧉", href: "https://github.com/Insoi"},
+                tags: ["Godot", "GDScript", "GDShader"],
+                link: {label: "WIP⧉", href: ""},
                 image: "/images/cameraIcon.png",
             },
             {
@@ -42,6 +42,13 @@ export const t = {
                 tags: [".AHK", "Macro"],
                 link: {label: "Github⧉", href: "https://github.com/Insoi/Precision-Detector-BSS"},
                 image: "/images/PrecisionDetector.png",
+            },
+            {
+                label: "Minesweeper 2.0",
+                description: "Modernized version of the Win96 Minesweeper app.",
+                tags: ["Godot", "GDScript"],
+                link: {label: "Github⧉", href: "https://github.com/Insoi/reinventing-minesweeper-2.0"},
+                image: "/images/Minesweeper.png",
             },
         ],
 
@@ -118,8 +125,8 @@ export const t = {
             {
                 label: "Texel Splatting",
                 description: "Den første genskabelse nogensinde af Texel Splatting til Godot 4.6.",
-                tags: ["GDScript", "GDShader"],
-                link: {label: "WIP⧉", href: "https://github.com/Insoi"},
+                tags: ["Godot", "GDScript", "GDShader"],
+                link: {label: "WIP⧉", href: ""},
                 image: "/images/cameraIcon.png",
             },
             {
@@ -128,6 +135,13 @@ export const t = {
                 tags: [".AHK", "Macro"],
                 link: {label: "Github⧉", href: "https://github.com/Insoi/Precision-Detector-BSS"},
                 image: "/images/PrecisionDetector.png",
+            },
+            {
+                label: "Minesweeper 2.0",
+                description: "Moderniseret version af Win96 Minestryger appen.",
+                tags: ["Godot", "GDScript"],
+                link: {label: "Github⧉", href: "https://github.com/Insoi/reinventing-minesweeper-2.0"},
+                image: "/images/Minesweeper.png",
             },
         ],
 
