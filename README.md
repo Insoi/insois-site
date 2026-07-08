@@ -14,4 +14,4 @@ Currently a work in progress. Built with Next.js and React and hosting on Vercel
 - [ransomwave.games](https://ransomwave.games)
 - [daliwali.neocities.org](https://daliwali.neocities.org/)
 
-> Visit the current state of the website at [Insoi.fun](insoi.fun)
+> Visit the current state of the website at [Insoi.fun](https://insoi.fun)
