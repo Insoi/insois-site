@@ -1,4 +1,4 @@
-# Insoi.xyz ![WIP](https://img.shields.io/badge/status-WIP-yellow)
+# Insoi.fun ![WIP](https://img.shields.io/badge/status-WIP-yellow)
 
 Currently a work in progress. Built with Next.js and React and hosting on Vercel.
 
@@ -14,4 +14,4 @@ Currently a work in progress. Built with Next.js and React and hosting on Vercel
 - [ransomwave.games](https://ransomwave.games)
 - [daliwali.neocities.org](https://daliwali.neocities.org/)
 
-> Visit the current state of the website at [Insoi.xyz](insois-site.vercel.app)
+> Visit the current state of the website at [Insoi.fun](insoi.fun)
